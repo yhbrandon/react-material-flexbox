@@ -1,0 +1,67 @@
+options:
+  formatter: stylish
+  merge-default-rules: false
+rules:
+  border-zero: 0
+  brace-style:
+    - allow-single-line: true
+  clean-import-paths:
+    - 1
+    - filename-extension: false
+      leading-underscore: false
+  empty-line-between-blocks:
+    - 1
+    - include: true
+      allow-single-line-rulesets: true
+  final-newline:
+    - 1
+    - include: true
+  force-element-nesting: 1
+  force-pseudo-nesting: 1
+  hex-length:
+    - 1
+    - style: long
+  hex-notation:
+    - 1
+    - style: lowercase
+  id-name-format:
+    - 0
+    - convention: camelcase
+  indentation:
+    - 1
+    - size: 2
+  no-color-literals: 0
+  no-css-comments: 1
+  no-duplicate-properties: 1
+  no-empty-rulesets: 1
+  no-important: 0
+  no-invalid-hex: 1
+  no-mergeable-selectors: 1
+  no-misspelled-properties: 1
+  no-qualifying-elements:
+    - 0
+    - allow-element-with-attribute: false
+      allow-element-with-class: false
+      allow-element-with-id: false
+  no-trailing-zero: 1
+  no-url-protocols: 1
+  quotes:
+    - 1
+    - style: single
+  shorthand-values: 1
+  single-line-per-selector: 0
+  space-after-colon: 1
+  space-after-comma: 1
+  space-before-brace:
+    - 1
+    - include: true
+  space-between-parens:
+    - 1
+    - include: false
+  trailing-semicolon: 1
+  url-quotes: 1
+  variable-name-format:
+    - 1
+    - allow-leading-underscore: true
+      convention: hyphenatedlowercase
+  zero-unit: 1
