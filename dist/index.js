@@ -3,8 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Flexbox = undefined;
 
-var _Flexbox = require('react-material-flexbox/src/Flexbox/Flexbox');
+var _Flexbox = require('./Flexbox/Flexbox');
 
-exports.Flexbox = _Flexbox.Flexbox;
+var _Flexbox2 = _interopRequireDefault(_Flexbox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Flexbox2.default;

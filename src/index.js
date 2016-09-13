@@ -1,3 +1,3 @@
-import { Flexbox } from 'react-material-flexbox/src/Flexbox/Flexbox'
+import Flexbox from './Flexbox/Flexbox'
 
-export { Flexbox }
+export default Flexbox

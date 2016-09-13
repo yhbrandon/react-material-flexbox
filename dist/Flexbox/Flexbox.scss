@@ -1,0 +1,181 @@
+// SASS follows the same setup up by the angular material team
+// https://material.angularjs.org/latest/layout/introduction
+@mixin layout($name: null) {
+  @if $name == null {	$name : ''; }
+  @if $name != ''   { $name : '-#{$name}'; }
+
+  .layout#{$name}__column {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;  
+  }
+
+  .layout#{$name}__row {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;     
+  }
+
+}
+
+@mixin flex($name: null) {
+  @if $name == null { $name : ''; }
+  @if $name != ''   { $name : '-#{$name}'; }
+
+  .flex#{$name} {
+    box-sizing: border-box;
+    flex: 1; 
+  }
+
+  @for $i from 0 through 20 {
+    $value : #{$i * 5 + '%'};
+
+    .layout#{$name}__column {
+
+      .flex#{$name}__#{$i * 5} {
+        box-sizing: border-box;
+        flex: 1 1 #{$value};
+        max-height: #{$value};
+        max-width: 100%;
+      }
+
+    }
+
+    .layout#{$name}__row {
+
+      .flex#{$name}__#{$i * 5} {
+        box-sizing: border-box;
+        flex: 1 1 #{$value};
+        max-height: 100%;
+        max-width: #{$value};
+      }
+
+    }
+
+  }
+
+}
+
+@mixin align($name: null) {
+  @if $name == null { $name : ''; }
+  @if $name != ''   { $name : '-#{$name}'; }
+
+  .align#{$name}__start__start {
+    justify-content : flex-start;
+    align-content : flex-start;
+    align-items: flex-start;
+  }
+
+  .align#{$name}__start__center {
+    justify-content : flex-start;
+    align-content : center;
+    align-items: center;
+  }
+
+  .align#{$name}__start__end {
+    justify-content : flex-start;
+    align-content : flex-end;
+    align-items: flex-end;
+  }
+
+  .align#{$name}__center__start {
+    justify-content : center;
+    align-content : flex-start;
+    align-items: flex-start;
+  }
+
+  .align#{$name}__center__center {
+    justify-content : center;
+    align-content : center;
+    align-items: center;
+  }
+
+  .align#{$name}__center__end {
+    justify-content : center;
+    align-content : flex-end;
+    align-items: flex-end;
+  }
+
+  .align#{$name}__end__start {
+    justify-content : flex-end;
+    align-content : flex-start;
+    align-items: flex-start;
+  }
+
+  .align#{$name}__end__center {
+    justify-content : end;
+    align-content : center;
+    align-items: center;
+  }
+
+  .align#{$name}__end__end {
+    justify-content : flex-end;
+    align-content : flex-end;
+    align-items: flex-end;
+  }
+
+  .align#{$name}__space-around__start {
+    justify-content : space-around;
+    align-content : flex-start;
+    align-items: flex-start;
+  }
+
+  .align#{$name}__space-around__center {
+    justify-content : space-around;
+    align-content : center;
+    align-items: center;
+  }
+
+  .align#{$name}__space-around__end {
+    justify-content : space-around;
+    align-content : flex-end;
+    align-items: flex-end;
+  }
+
+  .align#{$name}__space-between__start {
+    justify-content : space-between;
+    align-content : flex-start;
+    align-items: flex-start;
+  }
+
+  .align#{$name}__space-between__center {
+    justify-content : space-between;
+    align-content : center;
+    align-items: center;
+  }
+
+  .align#{$name}__space-between__end {
+    justify-content : space-between;
+    align-content : flex-end;
+    align-items: flex-end;
+  }
+
+}
+
+@include layout();
+@include flex();
+@include align();
+
+@media (max-width: 599px) {
+  @include layout(xs);
+  @include flex(xs);
+  @include align(xs);
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  @include layout(sm);
+  @include flex(sm);
+  @include align(sm);
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  @include layout(md);
+  @include flex(md);
+  @include align(md);
+}
+
+@media (min-width: 1280px) {
+  @include layout(lg);
+  @include flex(lg);
+  @include align(lg);
+}

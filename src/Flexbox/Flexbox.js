@@ -2,7 +2,7 @@ import classnames from 'classnames'
 import React, { PropTypes } from 'react'
 import { forEach } from 'lodash'
 
-import theme from 'modules/Flexbox/Flexbox.scss'
+import theme from './Flexbox.scss'
 
 const configureClasses = (props) => {
   const classes = {}

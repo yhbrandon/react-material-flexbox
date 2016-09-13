@@ -14,7 +14,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _lodash = require('lodash');
 
-var _Flexbox = require('modules/Flexbox/Flexbox.scss');
+var _Flexbox = require('./Flexbox.scss');
 
 var _Flexbox2 = _interopRequireDefault(_Flexbox);
 

@@ -2,14 +2,19 @@
   "name": "react-material-flexbox",
   "version": "1.0.0",
   "description": "React flexbox component following the guidelines set by the angular material team",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf ./dist",
-    "compile": "babel ./src --out-dir ./dist",
+    "compile": "babel ./src --out-dir ./dist && npm run copy:sass",
+    "copy:sass": "cpx './src/**/*.scss' ./dist",
     "build": "npm run clean && npm run lint && npm run compile",
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "eslint src",
     "lint:sass": "sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yhbrandon/react-material-flexbox.git"
   },
   "author": "Brandon Clark",
   "license": "MIT",
@@ -32,6 +37,7 @@
     "webpack": "^1.13.2"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "eslint": "^3.5.0",
     "eslint-config-standard": "^6.0.0",
     "eslint-config-standard-jsx": "^3.0.0",
