@@ -28,24 +28,22 @@ const configureClasses = (props) => {
 }
 
 const Flexbox = (props) => (
-  <div className={ configureClasses(props) }>{ props.children }</div>
+  <div className={ configureClasses(props) }>
+    { React.Children.map(props.children, (child) => React.cloneElement(child)) }
+  </div>
 )
 
 Flexbox.propTypes = {
   align: PropTypes.string,
-  children: PropTypes.element,
-  flex: PropTypes.number,
-  'flex-xs': PropTypes.number,
-  'flex-sm': PropTypes.number,
-  'flex-md': PropTypes.number,
-  'flex-lg': PropTypes.number,
-  'flex-xl': PropTypes.number,
-  layout: PropTypes.string,
-  'layout-xs': PropTypes.string,
-  'layout-sm': PropTypes.string,
-  'layout-md': PropTypes.string,
-  'layout-lg': PropTypes.string,
-  'layout-xl': PropTypes.string
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element
+  ]),
+  flex: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool
+  ]),
+  layout: PropTypes.string
 }
 
 export default Flexbox

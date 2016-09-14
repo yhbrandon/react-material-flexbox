@@ -45,25 +45,17 @@ var Flexbox = function Flexbox(props) {
   return _react2.default.createElement(
     'div',
     { className: configureClasses(props) },
-    props.children
+    _react2.default.Children.map(props.children, function (child) {
+      return _react2.default.cloneElement(child);
+    })
   );
 };
 
 Flexbox.propTypes = {
   align: _react.PropTypes.string,
-  children: _react.PropTypes.element,
-  flex: _react.PropTypes.bool,
-  'flex-xs': _react.PropTypes.bool,
-  'flex-sm': _react.PropTypes.bool,
-  'flex-md': _react.PropTypes.bool,
-  'flex-lg': _react.PropTypes.bool,
-  'flex-xl': _react.PropTypes.bool,
-  layout: _react.PropTypes.string,
-  'layout-xs': _react.PropTypes.string,
-  'layout-sm': _react.PropTypes.string,
-  'layout-md': _react.PropTypes.string,
-  'layout-lg': _react.PropTypes.string,
-  'layout-xl': _react.PropTypes.string
+  children: _react.PropTypes.oneOfType([_react.PropTypes.arrayOf(_react.PropTypes.element), _react.PropTypes.element]),
+  flex: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.bool]),
+  layout: _react.PropTypes.string
 };
 
 exports.default = Flexbox;
