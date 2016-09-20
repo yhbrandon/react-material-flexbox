@@ -38,7 +38,7 @@ var configureClasses = function configureClasses(props) {
     }
   });
 
-  return (0, _classnames2.default)(classes);
+  return (0, _classnames2.default)(props.className, classes);
 };
 
 var Flexbox = function Flexbox(props) {

@@ -24,7 +24,7 @@ const configureClasses = (props) => {
     }
   })
 
-  return classnames(classes)
+  return classnames(props.className, classes)
 }
 
 const Flexbox = (props) => (
