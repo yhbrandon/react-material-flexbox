@@ -103,7 +103,7 @@
   }
 
   .align#{$name}__end__center {
-    justify-content : end;
+    justify-content : flex-end;
     align-content : center;
     align-items: center;
   }
