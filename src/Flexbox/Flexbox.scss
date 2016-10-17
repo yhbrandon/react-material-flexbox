@@ -32,7 +32,7 @@
 
     .layout#{$name}__column {
 
-      .flex#{$name}__#{$i * 5} {
+      &.flex#{$name}__#{$i * 5} {
         box-sizing: border-box;
         flex: 1 1 #{$value};
         max-height: #{$value};
@@ -43,7 +43,7 @@
 
     .layout#{$name}__row {
 
-      .flex#{$name}__#{$i * 5} {
+      &.flex#{$name}__#{$i * 5} {
         box-sizing: border-box;
         flex: 1 1 #{$value};
         max-height: 100%;

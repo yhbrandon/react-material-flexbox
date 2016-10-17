@@ -1,6 +1,6 @@
 {
   "name": "react-material-flexbox",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React flexbox component following the guidelines set by the angular material team",
   "main": "dist/index.js",
   "scripts": {
