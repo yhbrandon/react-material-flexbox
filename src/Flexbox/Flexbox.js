@@ -8,7 +8,7 @@ const configureClasses = (props) => {
   const classes = {}
 
   forEach(props, (value, key) => {
-    if (key === 'children') return
+    if (key === 'children' || key === 'key') return
 
     let className
 
@@ -27,11 +27,15 @@ const configureClasses = (props) => {
   return classnames(props.className, classes)
 }
 
-const Flexbox = (props) => (
-  <div className={ configureClasses(props) }>
-    { React.Children.map(props.children, (child) => React.cloneElement(child)) }
-  </div>
-)
+const Flexbox = (props) => {
+  const { ...other } = props
+
+  return (
+    <div className={ configureClasses(props) } { ...other }>
+      { React.Children.map(props.children, (child) => React.cloneElement(child)) }
+    </div>
+  )
+}
 
 Flexbox.propTypes = {
   align: PropTypes.string,
