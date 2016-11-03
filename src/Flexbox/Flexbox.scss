@@ -27,29 +27,30 @@
     flex: 1; 
   }
 
+
   @for $i from 0 through 20 {
     $value : #{$i * 5 + '%'};
 
-    .layout#{$name}__column {
-
-      &.flex#{$name}__#{$i * 5} {
-        box-sizing: border-box;
-        flex: 1 1 #{$value};
-        max-height: #{$value};
-        max-width: 100%;
-      }
-
+    .flex#{$name}__#{$i * 5} {
+      flex: 1 1 #{$value};
+      max-width: #{$value};
+      max-height: 100%;
+      box-sizing: border-box;
     }
 
-    .layout#{$name}__row {
 
-      &.flex#{$name}__#{$i * 5} {
-        box-sizing: border-box;
-        flex: 1 1 #{$value};
-        max-height: 100%;
-        max-width: #{$value};
-      }
+    .layout#{$name}__column > .flex#{$name}__#{$i * 5} {
+      box-sizing: border-box;
+      flex: 1 1 #{$value};
+      max-height: #{$value};
+      max-width: 100%;
+    }
 
+    .layout#{$name}__row > .flex#{$name}__#{$i * 5} {
+      box-sizing: border-box;
+      flex: 1 1 #{$value};
+      max-height: 100%;
+      max-width: #{$value};
     }
 
   }

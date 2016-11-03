@@ -45,15 +45,13 @@ var Flexbox = function Flexbox(props) {
   return _react2.default.createElement(
     'div',
     { className: configureClasses(props) },
-    _react2.default.Children.map(props.children, function (child) {
-      return _react2.default.cloneElement(child);
-    })
+    props.children
   );
 };
 
 Flexbox.propTypes = {
   align: _react.PropTypes.string,
-  children: _react.PropTypes.oneOfType([_react.PropTypes.arrayOf(_react.PropTypes.element), _react.PropTypes.element]),
+  children: _react.PropTypes.node,
   flex: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.bool]),
   layout: _react.PropTypes.string
 };

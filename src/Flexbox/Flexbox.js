@@ -29,16 +29,13 @@ const configureClasses = (props) => {
 
 const Flexbox = (props) => (
   <div className={ configureClasses(props) }>
-    { React.Children.map(props.children, (child) => React.cloneElement(child)) }
+    { props.children }
   </div>
 )
 
 Flexbox.propTypes = {
   align: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element
-  ]),
+  children: PropTypes.node,
   flex: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.bool
